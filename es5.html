@@ -1,0 +1,55 @@
+
+<style>
+	.fontbig {
+		font-size: 1.5em;
+	}
+</style>
+<body oncontextmenu="return false;">
+<script>
+
+function check(casella, giusta, num){
+	// the solutions are good both for low and capital letters
+	if (giusta.includes(casella.value.toLowerCase())){
+		casella.style.background = 'yellow';
+		return casella.value.includes(giusta);
+	}
+	else{
+		casella.style.background = 'red';
+	}
+}
+
+function print_it(parola){
+	if (soluzioni.innerHTML.includes(parola)){
+	}
+	else {
+    	soluzioni.innerHTML += " - " + parola;
+	}
+}
+
+var countdom = 1;
+function input(domanda, giusta){
+	var dom_h2 = "<table style='background:#fcab41;'><td><p class='fontbig' style='color: blue'>" + countdom++ + " " + domanda;
+	var part1 = dom_h2 + "<center><input id='casella' class='fontbig' type=text class='t1' placeholder='?...' onchange=\"if (check(this,'";
+	part1 += giusta + "')){print_it(this.value)};\" /></center></p></table>";
+	document.write(part1);
+	}
+	
+
+x = document.getElementsByClassName('t1');
+for (i of x){
+    i.value = "";
+}
+
+</script><script>
+		
+input("Calcola l'interesse su 400 € al tasso del 4 % per 9 mesi", "12");
+input("Calcola l'interesse su 300 € al tasso del 4 % per 3 anni", "36");
+input("Calcola l'interesse su 900 € al tasso del 2 % per 232 giorni", "11.44 11,44");
+input("Calcola l'interesse su 900 € al tasso del 4 % per 7 mesi", "21");
+input("Calcola l'interesse su 200 € al tasso del 2 % per 5 mesi", "1.67 1,67");
+input("Calcola l'interesse su 100 € al tasso del 6 % per 4 anni", "24");
+input("Calcola l'interesse su 300 € al tasso del 3 % per 231 giorni", "5.7 5.70 5,7 5,70");
+input("Calcola l'interesse su 200 € al tasso del 7 % per 1 anno", "14");
+input("Calcola l'interesse su 100 € al tasso del 2 % per 157 giorni", "0.86 0,86");
+input("Calcola l'interesse su 300 € al tasso del 2 % per 5 anni", "30");
+</script>
