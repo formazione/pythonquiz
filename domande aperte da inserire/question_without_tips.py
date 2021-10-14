@@ -27,7 +27,7 @@ def add_questions(lista_domande):
 	return inp
 
 
-def start(title):
+def start():
 
 	style = """
 	<style> 
@@ -70,27 +70,15 @@ def start(title):
 		</script>
 		
 		<h1>TITOLO</h1>
-		
+		<script>
 				"""
 	html = style + check + inputs
 
 	# creates all the input("question", "answer") string
-	html += f"<h1>{title}</h1>"
-	pa = possible_answers(lista_domande)
-	random.shuffle(pa)
-	html += "[" + ",".join(pa) + "]"
-	html += "<script>" + add_questions(lista_domande) + "</script>"
-	save_file(html)
-
-
-def possible_answers(lista_domande):
-	html = []
-	for ans in lista_domande:
-		html.append(ans[1])
-	return html
-
-
-def save_file(html):
+	html += add_questions(lista_domande)
+	# close the script tag
+	html += "</script>"
+	html = html.replace("TITOLO", title)
 	with open(f"{filename}.html", "w", encoding="utf-8") as file:
 		file.write(html)
 	os.startfile(f"{filename}.html")
@@ -117,4 +105,4 @@ lista_domande = [
 
 # ==================== END customization =============== !!!
 
-start(title)
+start()
