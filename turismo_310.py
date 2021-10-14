@@ -1,7 +1,8 @@
 import random
 import sys
 
-print(sys.version)
+print("This works with Python 3.10")
+
 tmp = "Calcola l'interesse su 10.000 € al tasso del 7% per 1 anno."
 
 def genex():

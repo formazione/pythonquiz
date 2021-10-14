@@ -72,7 +72,7 @@ def start():
 
 		var part1 = dom_h2 + "<br><i style='color:red'>Answer and press return</i><br><input id='casella' class='fontbig' type=text class='t1' placeholder='?...' onchange=\\"if (check(this,'";
 		
-		part1 += giusta + "'));\\" style='text-align:right'/></center></p></table>";
+		part1 += giusta + "'));\\" style='text-align:right'/></center></p></table><br>";
 		
 		document.write(part1);
 		}
@@ -110,7 +110,7 @@ lista_domande = [
 # "question", "answer#another right answer#..."
 	["Chi sono i principali soggetti in disavanzo?", "imprese"],
 	["La banca ha la sua principale attività nell'intermediazione ...c", "creditizia"],
-	[]
+
 ]
 
 # ==================== END customization =============== !!!
